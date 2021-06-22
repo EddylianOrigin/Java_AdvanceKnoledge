@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class MyClass {
     @MyCustomAnnotation(value=10)
-    public void sayHello(){
+    public void sayHello() {
         System.out.println("my  custom annotation");
     }
 

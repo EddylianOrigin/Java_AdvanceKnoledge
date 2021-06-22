@@ -8,8 +8,8 @@ public class SerDeserDemo {
         student.setX(10);
 
         String filename = "C:\\Users\\sylva\\IdeaProjects\\Java_AdvanceKnoledge\\src\\com\\File\\Test.txt";
-        FileOutputStream fileOut = null;
-        ObjectOutputStream objOut = null;
+        FileOutputStream fileOut;
+        ObjectOutputStream objOut;
         // Serialization bei serialization the classtypinformation is lost
         try{
             fileOut = new FileOutputStream(filename);
@@ -28,8 +28,8 @@ public class SerDeserDemo {
         }
 
         //Deserialization
-        FileInputStream fileIn = null;
-        ObjectInputStream objIn = null;
+        FileInputStream fileIn;
+        ObjectInputStream objIn;
         try{
             fileIn = new FileInputStream(filename);
             objIn = new ObjectInputStream(fileIn);
@@ -39,11 +39,7 @@ public class SerDeserDemo {
             System.out.println("Object has been deseialized: \n" + object);
             System.out.println("THe deserialized value of x is: " + object.getX());// it will become 0 because they don't have transfert od data cause transient
             objIn.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }

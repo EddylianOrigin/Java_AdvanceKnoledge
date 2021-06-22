@@ -1,6 +1,9 @@
 package com.company;
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * if you don't know the type of the Datei
